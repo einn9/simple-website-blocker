@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "Simple Website Blocker",
+    "version": "1.0.0",
+    "description": "A simple Google Chrome extension that blocks websites through redirection.",
+    "permissions": ["declarativeNetRequest", "storage"],
+    "background": {
+    "service_worker": "background.js"
+    },
+    
+    "options_page": "options.html",
+    
+    "host_permissions": [
+            "http://*/*",
+            "https://*/*"
+]
+,
+    "web_accessible_resources": [
+        {
+            "resources": ["redirect.html"],
+            "matches": ["http://*/*", "https://*/*"]
+        }
+    ],
+    "icons": {
+    "16": "stop-16.png",
+    "48": "stop-48.png",
+    "128": "stop-128.png"
+  },
+  "action": {
+    "default_icon": "stop-16.png"
+  }
+}
